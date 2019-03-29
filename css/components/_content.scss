@@ -1,0 +1,119 @@
+// content
+.main {
+  min-height: 32rem;
+  font-size: $base-font-size;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 1rem;
+  }
+  p,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 0.8rem;
+  }
+  h1 {
+    font-size: 1.1rem;
+  }
+  h2 {
+    font-size: 0.9rem;
+  }
+  h1,
+  h2 {
+    font-weight: 500;
+  }
+  a {
+    color: inherit;
+
+    &:before {
+      margin-right: 4px;
+      font: normal normal normal 12px 'FontAwesome';
+      content: '\f0da';
+    }
+
+    &:hover {
+      color: $legacy-light-blue;
+    }
+  }
+  ul {
+    list-style: disc;
+  }
+}
+
+.page_overview,
+.page_references {
+  width: 100%;
+  padding: 0.3rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.page_overview {
+  background-color: $legacy-light-blue;
+  color: $white;
+
+  a:hover {
+    color: $white;
+  }
+}
+.page_references {
+  background-color: $tan;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: uppercase;
+    color: $legacy-light-blue;
+  }
+}
+
+.expandable:after {
+  margin-left: 4px;
+  font: normal normal normal 10px 'FontAwesome';
+  content: '\f0c1';
+  color: $grey-color;
+}
+.selected {
+  display: inline;
+  background-color: $grey-color-dark;
+  color: $white;
+  padding: 0.2rem;
+
+  &:after {
+    margin-left: 4px;
+    font: normal normal normal 12px 'FontAwesome';
+    content: '\f0da';
+  }
+}
+
+.page_expanded {
+  background-color: $powder-blue;
+  border-top: 1px solid $legacy-dark-blue;
+  border-bottom: 1px solid $legacy-dark-blue;
+  padding: 1rem;
+  min-height: 15rem;
+
+  visibility: hidden;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $legacy-dark-blue;
+
+    &:before {
+      margin-right: 4px;
+      font: normal normal normal 14px 'FontAwesome';
+      content: '\f0c1';
+    }
+  }
+}

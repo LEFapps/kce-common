@@ -1,0 +1,37 @@
+<div class="filterListContainer">
+  <button class="filterListButton" onclick="showFilters()">
+    <i class="fa fa-lg fa-filter" alt="filter"></i>
+  </button>
+  <div id="filterList">
+    <select onchange="selectFilter(this.value)">
+        <option></option>
+      {% for filter in page.filters %}
+        <option value={{filter.id}}>{{ filter.name }}</option>
+      {% endfor %}  
+    </select>
+  </div>
+</div>
+
+<script>
+  // simple toggler for select
+  function showFilters() {
+    const filterList = document.getElementById("filterList")
+    if (filterList.style.display === "none") {
+      filterList.style.display = "block"
+    } else {
+      if (!filterList.style.display) {filterList.style.display = "block"}
+      else {filterList.style.display = "none"}
+    }
+  }
+
+  // selects filter and passes hash to url
+  function selectFilter(value) {
+    if (value === null) {
+      window.location.href = `${window.location.href.split("#")[0]}`
+    }
+    if ((window.location.href).includes("#")) {
+      window.location.href = `${window.location.href.split("#")[0]}#${value}`
+    } else {window.location.href = `${window.location.href}#${value}`}
+    document.location.reload(true)
+  }
+</script>

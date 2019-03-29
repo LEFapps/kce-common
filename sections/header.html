@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="row header_secondary">
+    <span class="header_language col-md-4">
+      <ul class="list-inline">
+        {% for language in languages %}
+          {% if language.inactive == true %}
+            <li class="list-inline-item inactiveLanguage">{{ language.short | md }}</li>
+          {% else %}
+            <a class="list-inline-item" onClick='selectLanguage({{language}})'>
+              {% if language.short == page.language %}
+                <li class="currentLanguage">{{ language.short | md }}</li>           
+              {% else %}
+                <li>{{ language.short | md }}</li>
+              {% endif %}
+            </a>
+          {%endif%}
+        {% endfor %}
+      </ul>
+    </span>
+    <span class="header_more-info col-md-7 text-right">
+      {% if main.header.more-info %}
+      {{ main.header.more-info | md}}
+      {% endif %}
+    </span>
+    <span class="header_logo_belgium col-md-1 text-right"><img src={{"/assets/logos/logo_be.png"}}
+        alt="logo belgium"></span>
+  </div>
+  <div class="row header_primary">
+    <div class="col-md-12">
+      <span class="header_logo_main col-sm-12"><img src={{"/assets/logos/logo_kce.png"}} alt="logo KCE"></span>
+       <span class="header_title text-center">
+        {% if main.header.title %}
+        {{ main.header.title | md }}
+        {% endif %}
+      </span>
+    </div>
+  </div>
+</header>

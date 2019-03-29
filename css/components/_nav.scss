@@ -1,0 +1,62 @@
+// navigation
+nav {
+  margin-top: -3rem;
+  justify-content: center;
+  justify-items: center;
+
+  .nav-item {
+    font-size: 0.75rem;
+    color: $grey-color !important;
+    text-transform: uppercase;
+  }
+  li {
+    background-color: $grey-color-light;
+    padding: 0.3rem 1rem;
+    margin: 0 0.5rem;
+
+    &:hover {
+      background-color: $legacy-dark-blue;
+      .nav-item {
+        cursor: pointer;
+        color: $white !important;
+      }
+    }
+  }
+}
+.active {
+  background-color: $legacy-dark-blue;
+  a {
+    color: $white !important;
+  }
+}
+.navbar-toggler {
+  margin-top: 2rem;
+}
+
+// Responsive styling
+@include media-query($nav-break-one) {
+  nav li {
+    margin: 0 0.1rem;
+
+    a {
+      font-size: 0.75rem;
+    }
+  }
+}
+@include media-query($nav-break-two) {
+  nav li {
+    a {
+      font-size: 0.6rem;
+    }
+  }
+}
+@include media-query($nav-collapsed-one) {
+  .navbar-toggler {
+    margin-left: -1.1rem;
+  }
+}
+@include media-query($on-palm) {
+  .navbar-toggler {
+    margin-left: -1rem;
+  }
+}

@@ -1,0 +1,21 @@
+// Index page - language selection page
+.languageSelect {
+  button {
+    margin-top: 6rem;
+    width: 15rem;
+    height: 5rem;
+
+    text-transform: uppercase;
+    color: $grey-color;
+    font-size: 1.2rem;
+    background-color: $grey-color-light;
+    border: none;
+    letter-spacing: 0.09rem;
+
+    &:hover {
+      background-color: $legacy-dark-blue;
+      color: $white;
+      border: none;
+    }
+  }
+}

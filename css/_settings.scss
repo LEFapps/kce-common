@@ -1,0 +1,43 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../assets/fonts/AvenirNextLTPro-Regular.woff') format('woff'),
+    url('../assets/fonts/AvenirNextLTPro-Demi.woff') format('woff'),
+    url('../assets/fonts/AvenirNextLTPro-Bold.woff') format('woff');
+}
+
+// Our variables
+$base-font-family: 'Avenir Next', Arial, sans-serif;
+$base-font-size: 0.8rem;
+$small-font-size: $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit: 30px;
+
+$text-color: #111;
+$background-color: #fdfdfd;
+$white: #fff;
+
+$grey-color: #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark: darken($grey-color, 25%);
+
+$powder-blue: #c1ecf8;
+$tan: #ffeace;
+
+// From KCE style charter
+$legacy-dark-blue: #004495;
+$legacy-light-blue: #009de0;
+$legacy-green: #7ab51d;
+$legacy-red: #d3031b;
+$legacy-orange: #f29400;
+
+// Width of the content area
+$content-width: 950px;
+
+$on-laptop: 850px;
+$on-palm: 600px;
+
+$nav-break-one: 1399px;
+$nav-break-two: 1199px;
+$nav-collapsed-one: 991px;

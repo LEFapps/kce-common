@@ -1,0 +1,28 @@
+// footer
+.footer {
+  width: 100%;
+  padding: 0.4rem;
+  background-color: $grey-color-light;
+  color: $grey-color;
+
+  a {
+    color: $grey-color;
+
+    &:hover {
+      color: $legacy-light-blue;
+    }
+  }
+
+  .doormat {
+    padding: 1.5rem 0;
+    column-count: 3;
+    column-gap: 3rem;
+    width: 75%;
+  }
+  .main-footer {
+    border-top: 1.5px solid $white;
+    padding-top: 0.4rem;
+    padding-bottom: -0,4rem;
+    width: 100%;
+  }
+}
