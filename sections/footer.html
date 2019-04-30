@@ -1,3 +1,7 @@
-<footer class="footer navbar-fixed-bottom">
-  <div class="text-center col-sm-12 main-footer">{% if main.footer %}{{ main.footer | md }}{% endif %}</div>
+<footer class="footer">
+  <div><a onclick="routing(event)" id="links"
+      class="links">{% if main[page.language].links-text%}{{ main[page.language].links-text }}{% endif %}</a>
+  </div>
+  <div class="text-center col-sm-11 main-footer">
+    {% if main[page.language].footer %}{{ main[page.language].footer }}{% endif %}</div>
 </footer>

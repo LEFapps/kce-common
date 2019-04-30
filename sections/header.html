@@ -2,24 +2,24 @@
   <div class="row header_secondary">
     <span class="header_language col-md-4">
       <ul class="list-inline">
-        {% for language in languages %}
-          {% if language.inactive == true %}
-            <li class="list-inline-item inactiveLanguage">{{ language.short | md }}</li>
+        {% for language in main.languages %}
+        {% if language.active == true %}
+        <a class="list-inline-item" onClick='selectLanguage({{language}})'>
+          {% if language.short == page.language %}
+          <li class="currentLanguage">{{ language.short }}</li>
           {% else %}
-            <a class="list-inline-item" onClick='selectLanguage({{language}})'>
-              {% if language.short == page.language %}
-                <li class="currentLanguage">{{ language.short | md }}</li>           
-              {% else %}
-                <li>{{ language.short | md }}</li>
-              {% endif %}
-            </a>
-          {%endif%}
+          <li>{{ language.short }}</li>
+          {% endif %}
+        </a>
+        {% else %}
+        <li class="list-inline-item inactiveLanguage">{{ language.short }}</li>
+        {%endif%}
         {% endfor %}
       </ul>
     </span>
     <span class="header_more-info col-md-7 text-right">
-      {% if main.header.more-info %}
-      {{ main.header.more-info | md}}
+      {% if main[page.language].header.more-info %}
+      {{ main[page.language].header.more-info}}
       {% endif %}
     </span>
     <span class="header_logo_belgium col-md-1 text-right"><img src={{"/assets/logos/logo_be.png"}}
@@ -28,10 +28,12 @@
   <div class="row header_primary">
     <div class="col-md-12">
       <span class="header_logo_main col-sm-12"><img src={{"/assets/logos/logo_kce.png"}} alt="logo KCE"></span>
-       <span class="header_title text-center">
-        {% if main.header.title %}
-        {{ main.header.title | md }}
-        {% endif %}
+      <span class="header_title text-center">
+        <p>
+          {% if main[page.language].header.title %}
+          {{ main[page.language].header.title }}
+          {% endif %}
+        </p>
       </span>
     </div>
   </div>
