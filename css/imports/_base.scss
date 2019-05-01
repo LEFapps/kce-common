@@ -21,14 +21,33 @@ figure {
 /**
  * Basic styling
  */
+html {
+  background-color: $background-color;
+}
+
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
   font-weight: 300;
   color: $text-color;
-  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
+
+  &:before {
+    content: '';
+
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    height: 24vh;
+    margin-top: -6vh;
+
+    background-color: $grey-color-light;
+
+    transform: skewY(5deg);
+  }
 }
 
 body {
