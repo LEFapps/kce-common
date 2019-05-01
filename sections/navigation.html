@@ -10,40 +10,15 @@
             {% if item.menuTitle %}
               {% if page.file == item.file %}
                 <li class="active">
-              {%else%} 
+              {% else %} 
                 <li>
-              {%endif%}
+              {% endif %}
                   <a class="nav-item" onclick="routing(event)" id={{item.file}}>{{ item.menuTitle }}</a>
                 </li>
             {% endif %}
-          {%endif%}
+          {% endif %}
         {% endfor %}
       </ul>
     </div>
   </div>
 </nav>
-
-<script>
-  // includes your filter, if filter is set
-  function routing(e) {
-    let currentPage = window.location.href
-    let filter = currentPage.substring(currentPage.indexOf('#'))
-
-    if (filter.includes("#")) {
-      window.location.href = `${e.target.id}.html${filter}`
-    } else {
-      window.location.href = `${e.target.id}.html`
-    }
-  }
-
-  // simple navbar collapse without jQuery
-  function toggleNavbar() {
-    const navbar = document.getElementById("navbarNav")
-    if (navbar.style.display === "none") {
-      navbar.style.display = "block"
-    } else {
-      if (!navbar.style.display) {navbar.style.display = "block"}
-      else {navbar.style.display = "none"}
-    }
-  }
-</script>

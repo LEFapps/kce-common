@@ -21,35 +21,3 @@
     </div>
   </div>
 </div>
-
-
-<script>
-  applyFilter()
-  function applyFilter() {
-    // 1. get filter
-    let filter = window.location.href.split("#")[1]
-    // 2. set class where necessary
-    let filterOn = document.getElementsByClassName(filter)
-    for (i = 0; i < filterOn.length; i++) {
-      filterOn[i].parentElement.parentElement.setAttribute('open', '')
-    }
-  }
-
-  function openExpanded(e) {
-    // see if an element that was clicked has a ref-id
-    e = e || window.event
-    e = e.target || e.srcElement
-    if (e.id) {
-      // fetch content
-      let data = {{ page.expanded }}
-      for (i = 0; i < data.length; i++) {
-        if (data[i].reference === e.id) {
-          // render content
-          const container = document.getElementById("expanded")
-          container.style.visibility = "visible"
-          container.innerHTML = data[i].content;
-        }
-      }
-    }
-  }
-</script>
