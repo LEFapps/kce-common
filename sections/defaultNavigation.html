@@ -9,14 +9,10 @@
           <a class="nav-item" href="/" id={{item.file}}>Tool</a>
         </li>
         {% for item in pages %}
-          {% if page.language == item.language %}
-            {% if item.menuTitle %}
-              {% if page.file == item.file %}
-                <li class="active">
-              {% else %} 
+          {% if item.language == 'en' %}
+            {% if item.menuTitle %}              
                 <li>
-              {% endif %}
-                  <a class="nav-item" onclick="routing(event)" id={{item.file}}>{{ item.menuTitle }}</a>
+                  <a class="nav-item" href="en/{{item.file}}.html" id={{item.file}}>{{ item.menuTitle }}</a>
                 </li>
             {% endif %}
           {% endif %}

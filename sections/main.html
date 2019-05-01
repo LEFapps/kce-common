@@ -1,23 +1,12 @@
 <div class="main">
   <div class="row">
-    <div class="col-md-5 col order-md-8">{% if page.mainContent %}
+    <div class="col">{% if page.mainContent %}
       <div class="page_mainContent" onclick="openExpanded(event)">
         {{ page.mainContent | md }}
       </div>
         {% else %}
         {{ content }}
       {% endif %}
-    </div>
-    <div class="col-md-4 order-md-12 page_expanded" id="expanded"></div>
-    <div class="col-md-3 order-md-1">
-      {% if page.overview %}
-      <div class="page_overview">
-        <p>{{ page.overview | md }}</p>
-      </div>{% endif %}
-      {% if page.references %}
-      <div class="page_references">
-        <p>{{ page.references | md }}</p>
-      </div>{% endif %}
     </div>
   </div>
 </div>
