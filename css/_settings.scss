@@ -12,7 +12,7 @@ $base-font-size: 1.2rem;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit: 30px;
+$spacing-unit: 2rem;
 
 $text-color: #111;
 $background-color: #fdfdfd;
@@ -38,6 +38,20 @@ $success: $legacy-green;
 $danger: $legacy-red;
 $warning: $legacy-orange;
 $info: $legacy-light-blue;
+
+$fourk: 240em !default; /* 3840px */
+$threek: 180em !default; /* 2880px */
+$tv: 160em !default; /* 2560px */
+$hd: 120em !default; /* 1920px */
+$full: 100em !default; /* 1600px */
+$width: 90em !default; /* 1440px */
+$desktop: 80em !default; /* 1280px d */
+$laptop: 64em !default; /* 1024px l */
+$netbook: 56em !default; /* 896px n */
+$tablet: 48em !default; /* 768px t */
+$phablet: 40em !default; /* 640px f */
+$phone: 30em !default; /* 480px p */
+$watch: 20em !default; /* 320px w */
 
 // Width of the content area
 $content-width: 950px;

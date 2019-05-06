@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navbar-expand-lg">
+<nav id="nav" class="navbar navbar-light navbar-expand-sm">
   <div class="container-fluid">
     <button class="navbar-toggler" onclick="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
@@ -9,13 +9,13 @@
           <a class="nav-item" href="/" id={{item.file}}>Tool</a>
         </li>
         {% for item in pages %}
-          {% if item.language == 'en' %}
-            {% if item.menuTitle %}              
-                <li>
-                  <a class="nav-item" href="en/{{item.file}}.html" id={{item.file}}>{{ item.menuTitle }}</a>
-                </li>
-            {% endif %}
-          {% endif %}
+        {% if item.language == 'en' %}
+        {% if item.menuTitle %}
+        <li>
+          <a class="nav-item" href="en/{{item.file}}.html" id={{item.file}}>{{ item.menuTitle }}</a>
+        </li>
+        {% endif %}
+        {% endif %}
         {% endfor %}
       </ul>
     </div>

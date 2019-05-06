@@ -1,47 +1,42 @@
-<header class="header">
-  <div class="row header_secondary">
-    <span class="header_language col-md-4">
-      <ul class="list-inline">
-        {% for language in main.languages %}
-        {% if language.active == true %}
-        <a class="list-inline-item" onClick='selectLanguage({{language}})'>
-          {% if language.short == page.language %}
-          <li class="currentLanguage">{{ language.short }}</li>
-          {% else %}
-          <li>{{ language.short }}</li>
-          {% endif %}
-        </a>
+<header id="header">
+  <footer id="legacy-header">
+    <ul id="legacy-header__languages">
+      {% for language in main.languages %}
+      {% if language.active == true %}
+      <li>
+        {% if language.short == page.language %}
+        <span class="currentLanguage">{{ language.short }}</span>
         {% else %}
-        <li class="list-inline-item inactiveLanguage">{{ language.short }}</li>
-        {%endif%}
-        {% endfor %}
-      </ul>
-    </span>
-    <span class="header_more-info col-md-7 text-right">
+        <a onClick='selectLanguage({{language}})'>{{ language.short }}</a>
+        {% endif %}
+      </li>
+      {% else %}
+      <li><span class="disabled">{{ language.short }}</span></li>
+      {%endif%}
+      {% endfor %}
+    </ul>
+    <div id="legacy-header__info">
       {% if main.en.header.more-info %}
       {{ main.en.header.more-info}}
       {% endif %}
-    </span>
-    <span class="header_logo_belgium col-md-1 text-right"><img src={{"/assets/logos/logo_be.png"}}
-        alt="logo belgium"></span>
-  </div>
-  <div class="row header_primary">
-    <div class="col-md-12">
-      <span class="header_logo_main col-sm-12"><img src={{"/assets/logos/logo_kce.png"}} alt="logo KCE"></span>
-      <span class="header_title text-center">
-        <p>
-          {% if main.en.header.title %}
-          {{ main.en.header.title }}
-          {% endif %}
-        </p>
-      </span>
+      <img src={{"/assets/logos/logo_be.png"}} alt="logo belgium" width="32" height="24">
     </div>
-  </div>
+  </footer>
+  <h1 id="app-header">
+    <a href="/">
+      <img id="app-header__logo" src={{"/assets/logos/logo_kce.png"}} alt="logo KCE">
+      <div id="app-header__title">
+        {% if main.en.header.title %}
+        {{ main.en.header.title }}
+        {% endif %}
+      </div>
+    </a>
+  </h1>
 </header>
 
 <script>
   /** changes root-folder of html files **/
-  function selectLanguage (language) {
+  function selectLanguage(language) {
     window.location.href = '/' + language.short
   }
 </script>

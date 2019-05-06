@@ -1,62 +1,86 @@
-// navigation
-nav {
-  margin-top: -3rem;
-  justify-content: center;
-  justify-items: center;
+#nav {
+  position: relative;
+  z-index: 1;
+
+  padding: 0rem 1rem 1rem;
+
+  background-color: white;
+
+  ul.navigation {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    margin: 0;
+
+    justify-content: center;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+
+      height: 1px;
+
+      background-color: #d3d1d2;
+    }
+  }
 
   .nav-item {
-    font-size: 0.75rem;
-    color: $grey-color !important;
-    text-transform: uppercase;
-  }
-  li {
-    background-color: $grey-color-light;
-    padding: 0.3rem 1rem;
-    margin: 0 0.5rem;
+    color: $grey-color;
 
-    &:hover {
-      background-color: $legacy-dark-blue;
-      .nav-item {
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  li {
+    position: relative;
+    z-index: 1;
+
+    margin: 1rem 0.5rem;
+
+    color: $grey-color;
+
+    .nav-item {
+      padding: 0.5em 1em;
+
+      color: inherit;
+      background-color: $grey-color-light;
+      border-radius: $border-radius;
+
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $legacy-dark-blue;
+        color: white;
         cursor: pointer;
-        color: $white !important;
+      }
+
+      &.active {
+        background-color: $legacy-dark-blue;
+        color: white;
       }
     }
   }
-}
-.active {
-  background-color: $legacy-dark-blue;
-  a {
-    color: $white !important;
-  }
-}
-.navbar-toggler {
-  margin-top: 2rem;
-}
 
-// Responsive styling
-@include media-query($nav-break-one) {
-  nav li {
-    margin: 0 0.1rem;
+  .navbar-toggler {
+    position: absolute;
+    top: -2.75rem;
+    right: 1rem;
 
-    a {
-      font-size: 0.75rem;
-    }
-  }
-}
-@include media-query($nav-break-two) {
-  nav li {
-    a {
-      font-size: 0.6rem;
-    }
-  }
-}
-@include media-query($nav-collapsed-one) {
-  .navbar-toggler {
-    margin-left: -1.1rem;
-  }
-}
-@include media-query($on-palm) {
-  .navbar-toggler {
-    margin-left: -1rem;
+    padding: 0.25rem 0.5rem;
+
+    color: white;
+    background-color: $grey-color-light;
+    border: 0;
+
+    outline: 0;
+    appearance: none;
+    cursor: pointer;
   }
 }
