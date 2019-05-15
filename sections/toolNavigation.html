@@ -6,16 +6,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav navigation">
         <li>
-          <a class="nav-item" href="/" id={{item.file}}>Tool</a>
+          <a class="nav-item" onclick="routingTool('tool')" id={{item.file}}>Tool</a>
         </li>
         {% for item in pages %}
-        {% if item.language == 'en' %}
-        {% if item.menuTitle %}
-        <li>
-          <a class="nav-item" href="en/{{item.file}}.html" id={{item.file}}>{{ item.menuTitle }}</a>
-        </li>
-        {% endif %}
-        {% endif %}
+          {% if item.language == 'en' %}
+            {% if item.menuTitle %}
+              <li>
+                <a class="nav-item" onclick="routingTool(`{{item.file}}`)"" id={{item.file}}>{{ item.menuTitle }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </ul>
     </div>
