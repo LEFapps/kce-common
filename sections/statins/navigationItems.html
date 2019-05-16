@@ -1,0 +1,12 @@
+<li>
+  <a class="nav-item" onclick="routingTool('tool')" id={{item.file}}>Tool</a>
+</li>
+{% for item in pages %}
+  {% if item.language == 'en' %}
+    {% if item.menuTitle %}
+      <li>
+        <a class="nav-item" onclick="routingTool(`{{item.file}}`)"" id={{item.file}}>{{ item.menuTitle }}</a>
+      </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
