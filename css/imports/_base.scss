@@ -40,6 +40,7 @@ body {
     top: 50%;
     left: 0;
     right: 0;
+    z-index: -1;
 
     height: 48vh;
     margin-top: -18vh;
@@ -54,6 +55,7 @@ body {
   min-height: 100vh;
   position: relative;
   margin: 0;
+  background-color: transparent !important;
 }
 
 .container {
@@ -213,4 +215,9 @@ pre {
       fill: $grey-color;
     }
   }
+}
+
+a,
+button {
+  transition: color 0.2s ease-out, background 0.2s ease-out;
 }

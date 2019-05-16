@@ -6,6 +6,10 @@
 
   background-color: white;
 
+  .container-fluid {
+    padding: 0;
+  }
+
   ul.navigation {
     position: relative;
     z-index: 1;

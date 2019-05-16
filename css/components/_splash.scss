@@ -1,20 +1,43 @@
-// Index page - language selection page
 .languageSelect {
+  height: 70vh;
+  height: calc(100vh - 6rem);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include below($tablet) {
+    height: auto;
+    padding: 4rem 0;
+
+    flex-direction: column;
+  }
+
   button {
-    margin-top: 6rem;
-    width: 15rem;
-    height: 5rem;
+    padding: 1em 2em;
+
+    color: white;
+    background-color: $primary;
+    border: none;
+    border-radius: $border-radius;
 
     text-transform: uppercase;
-    color: $grey-color;
-    font-size: 1.2rem;
-    background-color: $grey-color-light;
-    border: none;
-    letter-spacing: 0.09rem;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.0625em;
+
+    @include below($tablet) {
+      font-size: 1.2em;
+      // padding: 0.5em 1em;
+
+      + button {
+        margin-top: 2rem;
+      }
+    }
 
     &:hover {
-      background-color: $legacy-dark-blue;
-      color: $white;
+      color: white;
+      background-color: $warning;
       border: none;
     }
   }
