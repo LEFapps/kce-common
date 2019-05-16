@@ -3,15 +3,15 @@
     {% if item.language == page.language %}
       {% if item.menuTitle %}
         <li>
-          <a class="nav-item" onclick="routingTool(`{{item.file}}`)"" id={{item.file}}>{{ item.menuTitle }}</a>
+          <a class="nav-item" onclick="routing(event)"" id={{item.file}}>{{ item.menuTitle }}</a>
         </li>
       {% endif %}
     {% endif %}
   {% else %}
-    {% if item.language = 'en' %}
+    {% if item.language == 'en' %}
       {% if item.menuTitle %}
         <li>
-          <a class="nav-item" onclick="routingTool(`{{item.file}}`)"" id={{item.file}}>{{ item.menuTitle }}</a>
+          <a class="nav-item" onclick="routing(event)"" id={{item.file}}>{{ item.menuTitle }}</a>
         </li>
       {% endif %}
     {% endif %}
