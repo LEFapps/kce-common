@@ -1,28 +1,37 @@
-// footer
-.footer {
+#footer {
+  position: relative;
+  z-index: 1;
+
   width: 100%;
-  padding: 0.4rem;
-  background-color: $grey-color-light;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+
+  background-color: white;
   color: $grey-color;
 
   a {
-    color: $grey-color;
+    color: inherit;
 
     &:hover {
-      color: $legacy-light-blue;
+      color: $info;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $danger;
     }
   }
+}
 
-  .doormat {
-    padding: 1.5rem 0;
-    column-count: 3;
-    column-gap: 3rem;
-    width: 75%;
-  }
-  .main-footer {
-    border-top: 1.5px solid $white;
-    padding-top: 0.4rem;
-    padding-bottom: -0,4rem;
-    width: 100%;
-  }
+#doormat {
+  padding-top: 1em;
+
+  border: 1px solid #d3d1d2;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+#credits {
+  padding: 1em 0;
+  font-size: 0.75em;
 }

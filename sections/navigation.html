@@ -5,22 +5,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav navigation">
-        <li>
-          <a class="nav-item" href="/" id={{item.file}}>Tool</a>
-        </li>
-        {% for item in pages %}
-        {% if page.language == item.language %}
-        {% if item.menuTitle %}
-        <li>
-          {% if page.file == item.file %}
-          <span class="nav-item active">{{ item.menuTitle }}</span>
-          {% else %}
-          <a class="nav-item" onclick="routing(event)" id={{item.file}}>{{ item.menuTitle }}</a>
-          {% endif %}
-        </li>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
+        {% include sections/navigationItems.html %}
       </ul>
     </div>
   </div>

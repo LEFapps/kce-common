@@ -1,0 +1,19 @@
+{% for item in pages %}
+  {% if page.language %}
+    {% if item.language == page.language %}
+      {% if item.menuTitle %}
+        <li>
+          <a class="nav-item" onclick="routing(event)"" id={{item.file}}>{{ item.menuTitle }}</a>
+        </li>
+      {% endif %}
+    {% endif %}
+  {% else %}
+    {% if item.language == 'en' %}
+      {% if item.menuTitle %}
+        <li>
+          <a class="nav-item" onclick="routing(event)"" id={{item.file}}>{{ item.menuTitle }}</a>
+        </li>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}

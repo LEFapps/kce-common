@@ -124,6 +124,8 @@
 
     display: block;
 
+    color: $warning;
+
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -140,12 +142,15 @@
   left: 0;
   top: 50%;
 
-  width: 4.5rem;
-  height: 1.8125rem;
-  margin-top: -0.90625rem;
+  width: 6rem;
+  height: 2.41667rem;
+  margin-top: -1.208333rem;
 
   @include below($phone) {
     top: 100%;
+
+    width: 4.5rem;
+    height: 1.8125rem;
     margin-top: -2.5rem;
   }
 }
