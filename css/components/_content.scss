@@ -1,28 +1,70 @@
 #main {
+  padding-top: 2em;
+  padding-bottom: 2em;
+
   display: flex;
+  flex-wrap: wrap;
 
   .text-wrapper {
     padding: 1em 1.2em;
+
+    &:empty {
+      display: none;
+    }
+
+    ul {
+      list-style-type: square;
+    }
+
+    a {
+      &[href] {
+        color: $info;
+
+        &:hover {
+          color: $primary;
+          text-decoration: underline;
+        }
+
+        &:active {
+          color: $danger;
+        }
+      }
+    }
   }
 
   header {
-    flex: 1 0 0px;
-    max-width: 25%;
+    flex: 0 0 100%;
 
-    @include above($tablet) {
+    @include above($netbook) {
+      flex: 1 0 0px;
+      max-width: 25%;
       margin-right: 2em;
+    }
+
+    @include below($netbook) {
+      margin-bottom: 2em;
     }
   }
 
   article {
     flex: 1 0 0px;
+
+    @include below($tablet) {
+      flex: 0 0 100%;
+    }
   }
 
   aside {
-    flex: 1 0 0px;
-    max-width: 25%;
+    flex: 0 0 100%;
 
-    display: flex;
+    @include above($tablet) {
+      flex: 1 0 0px;
+      max-width: 33.33%;
+    }
+
+    @include above($netbook) {
+      max-width: 25%;
+    }
 
     > figure {
       display: block;
@@ -32,6 +74,28 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
     }
+  }
+
+  h1 {
+    color: $warning;
+  }
+
+  h2,
+  h3 {
+    color: $primary;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
+
+  h3 {
+    font-size: 1em;
+    text-transform: uppercase;
   }
 }
 
@@ -62,6 +126,18 @@
   }
 }
 
+.footnote {
+  cursor: pointer;
+
+  &:after {
+    content: '*';
+
+    color: $info;
+
+    font-weight: bold;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -75,10 +151,12 @@ ul,
 ol,
 dl,
 figure {
-  clear: left;
-
   &.ref {
     float: left;
+
+    + * {
+      clear: left;
+    }
 
     &.expandedRef {
       margin-bottom: 0.6em;

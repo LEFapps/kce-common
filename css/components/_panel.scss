@@ -1,6 +1,14 @@
 .panel {
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-color: white;
   border-top: 0.25rem solid $warning;
+
+  &:not(:empty) {
+    background-image: none !important;
+  }
 
   &.panel__primary {
     background-color: $powder-blue;
