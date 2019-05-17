@@ -1,119 +1,88 @@
-// content
-.main {
-  min-height: 32rem;
-  font-size: $base-font-size;
+#main {
+  display: flex;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 1rem;
+  .text-wrapper {
+    padding: 1em 1.2em;
   }
-  p,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 1rem;
-  }
-  h1 {
-    font-size: 1.6rem;
-  }
-  h2 {
-    font-size: 1.3rem;
-  }
-  h1,
-  h2 {
-    font-weight: 500;
-  }
-  a {
-    color: inherit;
 
-    &:before {
-      margin-right: 4px;
-      font: normal normal normal 12px 'FontAwesome';
-      content: '\f0da';
-    }
+  header {
+    flex: 1 0 0px;
+    max-width: 25%;
 
-    &:hover {
-      color: $legacy-light-blue;
+    @include above($tablet) {
+      margin-right: 2em;
     }
   }
-  ul {
-    list-style: disc;
+
+  article {
+    flex: 1 0 0px;
+  }
+
+  aside {
+    flex: 1 0 0px;
+    max-width: 25%;
+
+    display: flex;
+
+    > figure {
+      display: block;
+
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
   }
 }
 
-.page_overview,
-.page_references {
-  width: 100%;
-  padding: 0.3rem 1rem;
-  margin-bottom: 0.5rem;
-}
-.page_overview {
-  background-color: $legacy-light-blue;
-  color: $white;
-
-  a:hover {
-    color: $white;
-  }
-}
-.page_references {
-  background-color: $tan;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-transform: uppercase;
-    color: $legacy-light-blue;
-  }
-}
-
-.expandable:after {
-  margin-left: 4px;
-  font: normal normal normal 10px 'FontAwesome';
-  content: '\f0c1';
-  color: $grey-color;
-}
-.selected {
-  display: inline;
-  background-color: $grey-color-dark;
-  color: $white;
-  padding: 0.2rem;
+.ref {
+  cursor: pointer;
 
   &:after {
-    margin-left: 4px;
-    font: normal normal normal 12px 'FontAwesome';
-    content: '\f0da';
+    content: ' ››';
+
+    color: $info;
+
+    font-weight: bold;
+  }
+
+  &.expandedRef {
+    margin: -0.3em -0.5em -0.2em;
+    padding: 0.3em 0.5em 0.2em;
+
+    display: inline-block;
+
+    color: $warning;
+    background-color: $tan;
+    border-radius: 0.25em;
+
+    &:after {
+      color: inherit;
+    }
   }
 }
 
-.page_expanded {
-  background-color: $powder-blue;
-  border-top: 1px solid $legacy-dark-blue;
-  border-bottom: 1px solid $legacy-dark-blue;
-  padding: 1rem;
-  min-height: 15rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure {
+  clear: left;
 
-  visibility: hidden;
+  &.ref {
+    float: left;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: $legacy-dark-blue;
-
-    &:before {
-      margin-right: 4px;
-      font: normal normal normal 14px 'FontAwesome';
-      content: '\f0c1';
+    &.expandedRef {
+      margin-bottom: 0.6em;
+      display: block;
     }
   }
 }
