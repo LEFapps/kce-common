@@ -1,0 +1,89 @@
+details {
+  border-top: 1 * $rpx solid $light;
+  border-bottom: 1 * $rpx solid $light;
+
+  > summary {
+    position: relative;
+
+    padding: $spacer/2 $spacer;
+    padding-right: 90 * $rpx;
+
+    display: block;
+
+    border: 0;
+    outline: 0 !important;
+
+    @include no-select;
+    cursor: pointer;
+    transition: $transition;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:after {
+      content: "+";
+
+      position: absolute;
+      top: 50%;
+      right: $spacer;
+
+      width: 40 * $rpx;
+      height: 40 * $rpx;
+      margin-top: -20 * $rpx;
+      box-sizing: border-box;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: white;
+      border: 1 * $rpx solid $light;
+
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    > * {
+      margin: 0;
+    }
+
+    h3 {
+      text-transform: none;
+    }
+  }
+
+  &:not([open]):not(.open) {
+    > summary {
+      &:hover {
+        background-color: $info;
+
+        &:after {
+          content: "+";
+        }
+      }
+    }
+  }
+
+  &[open],
+  &.open {
+    background-color: $info;
+
+    > summary {
+      background-color: $info;
+
+      &:after {
+        content: "−";
+      }
+    }
+  }
+
+  &.no-top {
+    border-top: 0;
+  }
+
+  .details-contents {
+    padding: spacer/2 $spacer $spacer;
+  }
+}

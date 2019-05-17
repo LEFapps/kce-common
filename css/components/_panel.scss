@@ -1,0 +1,12 @@
+.panel {
+  background-color: white;
+  border-top: 0.25rem solid $warning;
+
+  &.panel__primary {
+    background-color: $powder-blue;
+  }
+
+  &.panel__secondary {
+    background-color: $secondary;
+  }
+}
