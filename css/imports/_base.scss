@@ -65,10 +65,12 @@ body {
 
 @media print {
   @page {
-    margin: 0;
+    size: auto;
+    margin: 2.4cm;
   }
-  body {
-    margin: 3.2cm !important;
+  .page-break {
+    display: block;
+    page-break-before: always;
   }
 }
 
