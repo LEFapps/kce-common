@@ -1,17 +1,17 @@
 {% for item in pages %}
-  {% if page.language %}
-    {% if item.language == page.language %}
-      {% if item.menuTitle %}
+  {% if page.doc.language %}
+    {% if item.doc.language == page.doc.language %}
+      {% if item.doc.menuTitle %}
         <li>
-          <a class="nav-item {% if page.file == item.file %}active{%endif%}" onclick="routing(event)"" id={{item.file}}>{{ item.menuTitle }}</a>
+          <a class="nav-item routing {% if page.doc.file == item.doc.file %}active{%endif%}" onclick="routing(event)"" id={{item.doc.file}}>{{ item.doc.menuTitle }}</a>
         </li>
       {% endif %}
     {% endif %}
   {% else %}
-    {% if item.language == 'en' %}
-      {% if item.menuTitle %}
+    {% if item.doc.language == 'en' %}
+      {% if item.doc.menuTitle %}
         <li>
-          <a class="nav-item" onclick="routing(event)"" id={{item.file}}>{{ item.menuTitle }}</a>
+          <a class="nav-item routing" id={{item.doc.file}}>{{ item.doc.menuTitle }}</a>
         </li>
       {% endif %}
     {% endif %}
