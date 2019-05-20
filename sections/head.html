@@ -3,9 +3,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.doc.menuTitle %}{{ page.doc.menuTitle }}{% else %}{{ main.doc[page.doc.language].title }}{% endif %}</title>
+  <title>{% if page.menuTitle %}{{ page.menuTitle }}{% else %}{{ main[page.language].title }}{% endif %}</title>
   <meta name="description"
-    content="{% if page.doc.excerpt %}{{ page.doc.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
@@ -16,6 +16,6 @@
 
   <link rel="stylesheet" href="{{ "/css/main.css" }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ main.doc.title }}"
+  <link rel="alternate" type="application/rss+xml" title="{{ main.title }}"
     href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>

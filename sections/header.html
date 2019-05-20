@@ -1,10 +1,10 @@
 <header id="header" class="d-print-none">
   <footer id="legacy-header">
     <ul id="legacy-header__languages">
-      {% for language in main.doc.languages %}
+      {% for language in main.languages %}
       {% if language.active == true %}
       <li class="list-inline-item">
-        {% if language.short == page.doc.language %}
+        {% if language.short == page.language %}
         <span class="currentLanguage">{{ language.short }}</span>
         {% else %}
         <a id="{{language.short}}" class="selectLanguage">{{ language.short }}</a>
@@ -16,10 +16,10 @@
       {% endfor %}
     </ul>
     <div id="legacy-header__info">
-      {% if main.doc[page.doc.language].header.more-info %}
-      {{ main.doc[page.doc.language].header.more-info | md }}
+      {% if main[page.language].header.more-info %}
+      {{ main[page.language].header.more-info | md }}
       {% else %}
-      {{ main.doc.en.header.more-info |md }}
+      {{ main.en.header.more-info | md }}
       {% endif %}
       <img src={{"/assets/logos/logo_be.png"}} alt="logo belgium" width="32" height="24">
     </div>
@@ -28,10 +28,10 @@
     <a href="/">
       <img id="app-header__logo" src={{"/assets/logos/logo_kce.png"}} alt="logo KCE">
       <div id="app-header__title">
-        {% if main.doc[page.doc.language].header.title %}
-        {{ main.doc[page.doc.language].header.title }}
+        {% if main[page.language].header.title %}
+        {{ main[page.language].header.title }}
         {% else %}
-        {{ main.doc.en.header.title | md }}
+        {{ main.en.header.title | md }}
         {% endif %}
       </div>
     </a>

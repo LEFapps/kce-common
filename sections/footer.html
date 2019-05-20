@@ -1,17 +1,17 @@
 <footer id="footer" class="footer d-print-none">
   <div id="doormat"><a onclick="routing(event)" id="links" class="links">
-      {% if main.doc[page.doc.language].links-text%}
-      {{ main.doc[page.doc.language].links-text }}
+      {% if main[page.language].links-text%}
+      {{ main[page.language].links-text }}
       {% else %}
-      {{ main.doc.en.links-text }}
+      {{ main.en.links-text }}
       {% endif %}
     </a>
   </div>
   <div class="text-center col-sm-11 main-footer" id="credits">
-    {% if main.doc[page.doc.language].footer %}
-    {{ main.doc[page.doc.language].footer }}
+    {% if main[page.language].footer %}
+    {{ main[page.language].footer }}
     {% else %}
-    {{ main.doc.en.footer }}
+    {{ main.en.footer }}
     {% endif %}
   </div>
 </footer>
