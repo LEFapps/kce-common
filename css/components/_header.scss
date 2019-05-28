@@ -137,22 +137,10 @@
   }
 }
 
-#logo_be {
-  display: block;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: url("#{$assets}/logos/logo_be.png") no-repeat;
-}
-
 #app-header__logo {
   position: absolute;
   left: 0;
   top: 50%;
-  
-  display: block;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: url("#{$assets}/logos/logo_kce.png") no-repeat;
 
   width: 6rem;
   height: 2.41667rem;
