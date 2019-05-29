@@ -15,20 +15,15 @@ Make sure you add this folder to your .eleventyignore file, otherwise it might b
 You can now import files from kce-common in your `css/main.scss`:
 
 ```scss
-@import
-  '../kce-common/css/_settings',
-  '../kce-common/css/components/_mixins',
-  '../kce-common/css/imports/_base',
-  '../kce-common/css/components/_splash',
-  '../kce-common/css/components/_content',
-  '../kce-common/css/components/_filter',
-  '../kce-common/css/components/_nav',
-  '../kce-common/css/components/_header',
-  '../kce-common/css/components/_footer';
-
-// Bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import "../kce-common/css/_settings", "<your custom settings>", "../kce-common/css/_common";
 ```
+
+Note that the inclusion of `_common.scss` automatically includes bootstrap as well. So the complete load order is this:
+
+* Common KCE scss settings (variables)
+* Custom overrides of scss variables
+* Shared KCE components, configured by variables
+* Bootstrap, configured by variables
 
 ## Sections
 

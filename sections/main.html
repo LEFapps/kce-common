@@ -1,12 +1,16 @@
-<div class="main">
+<div class="main" id="main">
   <div class="row">
-    <div class="col">{% if page.mainContent %}
+    <div class="col">
+    <div class="panel">
+    <div class="text-wrapper">{% if page.mainContent %}
       <div class="page_mainContent" onclick="openExpanded(event)">
         {{ page.mainContent | md }}
-      </div>
+        </div>
         {% else %}
         {{ content }}
       {% endif %}
+      </div>
+      </div>
     </div>
   </div>
 </div>
