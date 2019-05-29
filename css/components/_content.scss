@@ -131,11 +131,15 @@
   cursor: pointer;
 
   &:after {
-    content: '*';
+    font-family: "Lucida Console", Monaco, monospace;
+    content: 'i';
 
     color: $info;
 
     font-weight: bold;
+    font-size: 0.9rem;
+
+    vertical-align: super;
   }
 }
 
