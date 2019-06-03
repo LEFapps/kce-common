@@ -1,15 +1,13 @@
-
 @import 
-  "./components/_mixins",
-  "./lef-css/mixins",
-  "./imports/_base",
-  "./components/_splash",
-  "./components/_content",
-  "./components/_filter",
-  "./components/_nav",
-  "./components/_header",
-  "./components/_footer",
-  "./components/_panel";
-
-
-@import "../../node_modules/bootstrap/scss/bootstrap";
+"./components/_mixins",
+"./lef-css/mixins",
+"../../node_modules/bootstrap/scss/bootstrap",
+"./imports/_base",
+'./imports/_layout',
+"./components/_splash",
+"./components/_content",
+"./components/_filter",
+"./components/_nav",
+"./components/_header",
+"./components/_footer",
+"./components/_panel";
