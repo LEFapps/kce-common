@@ -58,11 +58,11 @@
 
     @include above($tablet) {
       flex: 1 0 0px;
-      max-width: 33.33%;
+      max-width: 50%;
     }
 
     @include above($netbook) {
-      max-width: 25%;
+      max-width: 66.7%;
     }
 
     > figure {
