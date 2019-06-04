@@ -30,9 +30,7 @@
       <img id="app-header__logo" src={{ assets | append: "/logos/logo_kce.png" }} alt="logo KCE">
       <div id="app-header__title">
         {% if main[page.language].header.title %}
-        {{ main[page.language].header.title }}
-        {% else %}
-        {{ main.en.header.title | md }}
+          {{ main[page.language].header.title }}
         {% endif %}
       </div>
     </a>
