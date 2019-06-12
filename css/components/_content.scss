@@ -1,6 +1,5 @@
 #main {
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding: 2em;
 
   display: flex;
   flex-wrap: wrap;
@@ -59,11 +58,11 @@
 
     @include above($tablet) {
       flex: 1 0 0px;
-      max-width: 33.33%;
+      max-width: 50%;
     }
 
     @include above($netbook) {
-      max-width: 25%;
+      max-width: 66.7%;
     }
 
     > figure {
@@ -131,11 +130,15 @@
   cursor: pointer;
 
   &:after {
-    content: '*';
+    font-family: "Lucida Console", Monaco, monospace;
+    content: 'i';
 
     color: $info;
 
     font-weight: bold;
+    font-size: 0.9rem;
+
+    vertical-align: super;
   }
 }
 
