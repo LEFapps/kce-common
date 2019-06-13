@@ -54,6 +54,7 @@
   }
 
   aside {
+    display: flex;
     flex: 0 0 100%;
 
     @include above($tablet) {
@@ -67,6 +68,9 @@
 
     > figure {
       display: block;
+
+      align-self: stretch;
+      flex: 0 0 100%;
 
       background-position: center center;
       background-size: cover;
