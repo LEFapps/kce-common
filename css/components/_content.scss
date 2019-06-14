@@ -12,7 +12,12 @@
     }
 
     ul {
-      list-style-type: square;
+      list-style-type: square !important;
+
+      li {
+        display: list-item !important;
+        margin-bottom: 1rem;
+      }
     }
 
     a {
@@ -54,23 +59,19 @@
   }
 
   aside {
-    display: flex;
     flex: 0 0 100%;
 
     @include above($tablet) {
       flex: 1 0 0px;
-      max-width: 50%;
+      max-width: 33.33%;
     }
 
     @include above($netbook) {
-      max-width: 66.7%;
+      max-width: 25%;
     }
 
     > figure {
       display: block;
-
-      align-self: stretch;
-      flex: 0 0 100%;
 
       background-position: center center;
       background-size: cover;
