@@ -41,7 +41,7 @@
 
     @include above($netbook) {
       flex: 1 0 0px;
-      max-width: 25%;
+      max-width: 20%;
       margin-right: 2em;
     }
 
@@ -64,11 +64,11 @@
 
     @include above($tablet) {
       flex: 1 0 0px;
-      max-width: 33.33%;
+      max-width: 55%;
     }
 
     @include above($netbook) {
-      max-width: 25%;
+      max-width: 55%;
     }
 
     > figure {
