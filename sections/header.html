@@ -3,39 +3,40 @@
   <footer id="legacy-header">
     <ul id="legacy-header__languages">
       {% for language in main.languages %}
-        {% if language.active == true %}
-          <li class="list-inline-item">
-            {% if language.short == page.language %}
-              <span class="currentLanguage">{{ language.short }}</span>
-            {% else %}
-              <a id="{{language.short}}" class="selectLanguage">{{ language.short }}</a>
-            {% endif %}
-          </li>
+      {% if language.active == true %}
+      <li class="list-inline-item">
+        {% if language.short == page.language %}
+        <span class="currentLanguage">{{ language.short }}</span>
         {% else %}
-          <li>
-            <span class="disabled">{{ language.short }}</span></li>
-          {%endif%}
-        {% endfor %}
-      </ul>
-      <div id="legacy-header__info">
-        {% if main[page.language].header.more-info %}
-          {{ main[page.language].header.more-info | md }}
-        {% else %}
-          {{ main.en.header.more-info | md }}
+        <a id="{{language.short}}" class="selectLanguage">{{ language.short }}</a>
         {% endif %}
-        <a href="https://www.belgium.be/" target="_blank"><img id="logo_be" src={{ assets | append: "/logos/logo_be.png" }} alt="logo belgium" width="32" height="24"></a>
+      </li>
+      {% else %}
+      <li>
+        <span class="disabled">{{ language.short }}</span></li>
+      {%endif%}
+      {% endfor %}
+    </ul>
+    <div id="legacy-header__info">
+      {% if main[page.language].header.more-info %}
+      {{ main[page.language].header.more-info | md }}
+      {% else %}
+      {{ main.en.header.more-info | md }}
+      {% endif %}
+      <a href="https://www.belgium.be/" target="_blank"><img id="logo_be"
+          src={{ assets | append: "/logos/logo_be.png" }} alt="logo belgium" width="32" height="24"></a>
+    </div>
+  </footer>
+  <h1 id="app-header">
+    <a href="/{% if page.language %}{{ page.language }}/{% endif %}">
+      <img id="app-header__logo" src={{ assets | append: "/logos/logo_kce.png" }} alt="logo KCE">
+      <div id="app-header__title">
+        {% if main[page.language].header.title %}
+        {{ main[page.language].header.title }}
+        {% else %}
+        &nbsp;
+        {% endif %}
       </div>
-    </footer>
-    <h1 id="app-header">
-      <a href="/">
-        <img id="app-header__logo" src={{ assets | append: "/logos/logo_kce.png" }} alt="logo KCE">
-        <div id="app-header__title">
-          {% if main[page.language].header.title %}
-            {{ main[page.language].header.title }}
-          {% else %}
-         &nbsp;
-        {% endif %}
-        </div>
-      </a>
-    </h1>
-  </header>
+    </a>
+  </h1>
+</header>
