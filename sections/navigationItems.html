@@ -1,19 +1,22 @@
 {% for item in pages %}
-  {% if page.language %}
-    {% if item.language == page.language %}
-      {% if item.menuTitle %}
-        <li>
-          <a class="nav-item routing {% if page.file == item.file %}active{%endif%}" onclick="routing(event)"" id={{item.file}}>{{ item.menuTitle }}</a>
-        </li>
-      {% endif %}
-    {% endif %}
-  {% else %}
-    {% if item.language == 'en' %}
-      {% if item.menuTitle %}
-        <li>
-          <a class="nav-item routing" id={{item.file}}>{{ item.menuTitle }}</a>
-        </li>
-      {% endif %}
-    {% endif %}
-  {% endif %}
+{% if page.language %}
+{% if item.language == page.language %}
+{% if item.menuTitle %}
+<li>
+  <a href="
+  {{item.file}}.html" class="nav-item routing {% if page.file == item.file %}active{%endif%}"
+    id={{item.file}}>{{ item.menuTitle }}</a>
+</li>
+{% endif %}
+{% endif %}
+{% else %}
+<!-- Catches exceptions -->
+{% if item.language == 'en' %}
+{% if item.menuTitle %}
+<li>
+  <a href="{{item.file}}.html" class=" nav-item routing" id={{item.file}}>{{ item.menuTitle }}</a>
+</li>
+{% endif %}
+{% endif %}
+{% endif %}
 {% endfor %}
