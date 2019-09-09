@@ -1,4 +1,4 @@
-{% assign  assets = 'http://assets.kce.eenwereldmetlef.be.s3-website-eu-west-1.amazonaws.com' %}
+<!-- {% assign  assets = 'http://assets.kce.eenwereldmetlef.be.s3-website-eu-west-1.amazonaws.com' %} -->
 <header id="header" class="d-print-none">
   <footer id="legacy-header">
     <ul id="legacy-header__languages">
@@ -23,13 +23,13 @@
       {% else %}
       {{ main.en.header.more-info | md }}
       {% endif %}
-      <a href="https://www.belgium.be/" target="_blank"><img id="logo_be"
-          src={{ assets | append: "/logos/logo_be.png" }} alt="logo belgium" width="32" height="24"></a>
+      <a href="https://www.belgium.be/" target="_blank"><img id="logo_be" src="../../dist/img/logo_be.png"
+          alt="logo belgium" width="32" height="24"></a>
     </div>
   </footer>
   <h1 id="app-header">
     <a href="/{% if page.language %}{{ page.language }}/{% endif %}">
-      <img id="app-header__logo" src={{ assets | append: "/logos/logo_kce.png" }} alt="logo KCE">
+      <img id="app-header__logo" src={{"../../dist/img/logo_kce.png"}} alt="logo KCE">
       <div id="app-header__title">
         {% if main[page.language].header.title %}
         {{ main[page.language].header.title }}
