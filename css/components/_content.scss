@@ -135,19 +135,19 @@
 .footnote {
   cursor: pointer;
 
+  &:hover {
+    text-decoration: underline;
+  }
+
   &:after {
-    content: 'i';
+    content: '*';
 
-    border: 2px solid;
-    border-radius: 80%;
-    padding: 0.1rem 0.9rem;
-
+    padding-left: 0.4rem;
     color: $info;
 
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: bolder;
+    font-size: 1.4rem;
 
-    vertical-align: super;
   }
 }
 
