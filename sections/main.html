@@ -1,15 +1,18 @@
 <div class="main" id="main">
   <div class="row">
     <div class="col">
-    <div class="panel">
-    <div class="text-wrapper">{% if page.mainContent %}
-      <div class="page_mainContent" onclick="openExpanded(event)">
-        {{ page.mainContent | md }}
+      <div class="panel">
+        <div class="text-wrapper">{% if page.mainContent %}
+          <div class="page_mainContent" onclick="openExpanded(event)">
+            {{ page.mainContent | md }}
+          </div>
+          {% else %}
+          {{ content }}
+          {% endif %}
+          {% if page.showLogos %}
+          {% include sections/logos.html %}
+          {% endif %}
         </div>
-        {% else %}
-        {{ content }}
-      {% endif %}
-      </div>
       </div>
     </div>
   </div>
