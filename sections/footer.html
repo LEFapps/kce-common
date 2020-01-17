@@ -2,8 +2,6 @@
   <div id="doormat"><a onclick="routing(event)" id="links" class="links" aria-label="Links">
       {% if main[page.language].links-text%}
       {{ main[page.language].links-text | md }}
-      {% else %}
-      {{ main.en.links-text | md }}
       {% endif %}
     </a>
   </div>
